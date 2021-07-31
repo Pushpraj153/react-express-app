@@ -1,5 +1,5 @@
 #Get the base node image
-FROM node
+FROM node:16-alpine
 
 #build frontend
 RUN mkdir -p /app/client
@@ -19,7 +19,7 @@ RUN npm install
 # Copy everything from current local directory to working directory of image
 COPY . .
 
-# Expose port 3000
+# Map Port 3000 into the container
 EXPOSE 3000
 
 # Command to start the application
